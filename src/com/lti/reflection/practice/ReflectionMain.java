@@ -8,6 +8,7 @@ public class ReflectionMain {
         ReflectionTest reflectionTest=new ReflectionTest();
         Class classMetaData=reflectionTest.getInfoOfClass("com.lti.reflection.practice.Person");
         Person person= (Person) reflectionTest.getRequiredObject(classMetaData);
+
         System.out.println("*************Person Object************** : ");
         System.out.println(person);
         System.out.println("*************Class Name************** : ");
@@ -66,5 +67,7 @@ public class ReflectionMain {
         Method method2=classMetaData.getDeclaredMethod("getFatherName");
         method2.setAccessible(true);
         method2.invoke(person);
+
+        Thread.currentThread().getThreadGroup().getParent().getName();
     }
 }
